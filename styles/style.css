@@ -10,9 +10,20 @@ body {
 section {
     display: flex;
     flex-direction: column;
-    width: 250px;
-    height: 400px;
+    width: 375px;
+    height: 600px;
     text-align: center;
+    padding-top: 50px;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+input {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--heightF) calc(var(--heightF) / 2) 0 0;
 }
 
 #mainBody {
@@ -21,22 +32,25 @@ section {
 }
 
 #mainFieldBody {
-    border-radius: 30px 20px 0 0;
-    border: 2px solid black;
+    height: calc(100% / 7);
+    border-radius: var(--heightF) calc(var(--heightF) / 2) 0 0;
+    border: 3px solid black;
     width: 100%;
-    height: 50px;
     background-color: rgb(79, 79, 79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #actionsBody {
-    border-radius: 0 0 20px 20px;
-    border: 2px solid black;
+    border-radius: 0 0 10% 10%;
+    border: 3px solid black;
+    border-top: 0px;
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - 600px / 8);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* gap: 19px; */
     background-color: rgb(25, 25, 25);
 }
 
@@ -66,15 +80,16 @@ section {
 #row5 {
     display: flex;
     justify-content: flex-start;
-    padding-left: calc((250px - (4 * 40px)) / 5);
+    padding-left: calc((375px - (4 * 60px)) / 5);
 }
 
 .btn {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     color: white;
     border: 1px solid white;
+    font-weight: 700;
 }
 
 .btn:hover {
