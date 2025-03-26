@@ -2,6 +2,7 @@
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
+    box-sizing: content-box;
 }
 
 body {
@@ -14,35 +15,80 @@ body {
 section {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 375px;
     height: 600px;
     text-align: center;
-    padding-top: 50px;
+    margin-top: 50px;
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+section::after,
+section::before {
+    /* --angle: 0deg; */
+    width: 381px;
+    height: 606px;
+    content: '';
+    position: absolute;
+    background-image: conic-gradient(
+        from var(--angle),
+        transparent 0%,
+        red,
+        orange,
+        yellow,
+        lime,
+        green,
+        lightblue,
+        blue,
+        darkviolet,
+        pink,
+        red
+    );
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    border-radius: 80px 40px 40px 40px;
+    animation: 3s spin linear infinite;
+}
+
+section::before {
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 h1 {
     padding-top: 50px;
     font-weight: 700;
+    text-shadow: 2px -1px 1px darkorange;
 }
 
 input {
     height: 100%;
     width: 100%;
-    border-radius: var(--heightF) calc(var(--heightF) / 2) 0 0;
+    border-radius: 80px 40px 0 0;
     font-weight: 700;
     font-size: 40px;
     padding-left: 30px;
 }
 
-#mainBody {
-    width: 100%;
-    height: 100%;
-}
-
 #mainFieldBody {
     height: calc(100% / 7);
-    border-radius: var(--heightF) calc(var(--heightF) / 2) 0 0;
-    border: 3px solid black;
+    border-radius: 80px 40px 0 0;
     width: 100%;
     background-color: rgb(79, 79, 79);
     display: flex;
@@ -51,11 +97,9 @@ input {
 }
 
 #actionsBody {
-    border-radius: 0 0 10% 10%;
-    border: 3px solid black;
-    border-top: 0px;
+    border-radius: 0 0 40px 40px;
     width: 100%;
-    height: calc(100% - 600px / 8);
+    height: calc(100% - 600px / 7);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +137,7 @@ input {
 
 .btn {
     border-radius: 50%;
-    width: 60px;
+    width: 50px;
     height: 60px;
     color: white;
     border: 1px solid white;

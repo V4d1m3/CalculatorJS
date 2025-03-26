@@ -27,148 +27,130 @@
         <header></header>
         <h1>Calculator</h1>
         <section id="container1">
-            <div id="mainBody">
-                <div id="mainFieldBody">
-                    <input
-                        type="number"
-                        id="inputField"
-                        name="inputOutput"
-                        value="0"
-                        step="any"
-                    />
+            <div id="mainFieldBody">
+                <input
+                    type="number"
+                    id="inputField"
+                    name="inputOutput"
+                    value="0"
+                    step="any"
+                />
+            </div>
+            <div id="actionsBody">
+                <!-- <div class="orangeGroup"> -->
+                <div class="row" id="row1">
+                    <button data-action="plus" class="btn orangesBtn" id="plus">
+                        +
+                    </button>
+                    <button
+                        data-action="addSeven"
+                        class="btn graysBtn"
+                        id="seven"
+                    >
+                        7
+                    </button>
+                    <button
+                        data-action="addEight"
+                        class="btn graysBtn"
+                        id="eight"
+                    >
+                        8
+                    </button>
+                    <button
+                        data-action="addNine"
+                        class="btn graysBtn"
+                        id="nine"
+                    >
+                        9
+                    </button>
                 </div>
-                <div id="actionsBody">
-                    <!-- <div class="orangeGroup"> -->
-                    <div class="row" id="row1">
-                        <button
-                            data-action="plus"
-                            class="btn orangesBtn"
-                            id="plus"
-                        >
-                            +
-                        </button>
-                        <button
-                            data-action="addSeven"
-                            class="btn graysBtn"
-                            id="seven"
-                        >
-                            7
-                        </button>
-                        <button
-                            data-action="addEight"
-                            class="btn graysBtn"
-                            id="eight"
-                        >
-                            8
-                        </button>
-                        <button
-                            data-action="addNine"
-                            class="btn graysBtn"
-                            id="nine"
-                        >
-                            9
-                        </button>
-                    </div>
 
-                    <div class="row" id="row2">
-                        <button
-                            data-action="minus"
-                            class="btn orangesBtn"
-                            id="_clear"
-                        >
-                            -
-                        </button>
-                        <button
-                            data-action="addFour"
-                            class="btn graysBtn"
-                            id="four"
-                        >
-                            4
-                        </button>
-                        <button
-                            data-action="addFive"
-                            class="btn graysBtn"
-                            id="five"
-                        >
-                            5
-                        </button>
-                        <button
-                            data-action="addSix"
-                            class="btn graysBtn"
-                            id="six"
-                        >
-                            6
-                        </button>
-                    </div>
-                    <div class="row" id="row3">
-                        <button
-                            data-action="multiply"
-                            class="btn orangesBtn"
-                            id="_multiply"
-                        >
-                            *
-                        </button>
-                        <button
-                            data-action="addOne"
-                            class="btn graysBtn"
-                            id="one"
-                        >
-                            1
-                        </button>
-                        <button
-                            data-action="addTwo"
-                            class="btn graysBtn"
-                            id="two"
-                        >
-                            2
-                        </button>
-                        <button
-                            data-action="addThree"
-                            class="btn graysBtn"
-                            id="three"
-                        >
-                            3
-                        </button>
-                    </div>
-                    <div class="row" id="row4">
-                        <button
-                            data-action="divide"
-                            class="btn orangesBtn"
-                            id="_divide"
-                        >
-                            /
-                        </button>
-                        <button
-                            data-action="addZero"
-                            class="btn graysBtn"
-                            id="zero"
-                        >
-                            0
-                        </button>
-                        <button
-                            data-action="addPoint"
-                            class="btn graysBtn"
-                            id="point"
-                        >
-                            .
-                        </button>
-                        <button
-                            data-action="equals"
-                            class="btn graysBtn"
-                            id="_equals"
-                        >
-                            =
-                        </button>
-                    </div>
-                    <div class="row" id="row5">
-                        <button
-                            data-action="clear"
-                            class="btn orangesBtn"
-                            id="_clear"
-                        >
-                            C
-                        </button>
-                    </div>
+                <div class="row" id="row2">
+                    <button
+                        data-action="minus"
+                        class="btn orangesBtn"
+                        id="_clear"
+                    >
+                        -
+                    </button>
+                    <button
+                        data-action="addFour"
+                        class="btn graysBtn"
+                        id="four"
+                    >
+                        4
+                    </button>
+                    <button
+                        data-action="addFive"
+                        class="btn graysBtn"
+                        id="five"
+                    >
+                        5
+                    </button>
+                    <button data-action="addSix" class="btn graysBtn" id="six">
+                        6
+                    </button>
+                </div>
+                <div class="row" id="row3">
+                    <button
+                        data-action="multiply"
+                        class="btn orangesBtn"
+                        id="_multiply"
+                    >
+                        *
+                    </button>
+                    <button data-action="addOne" class="btn graysBtn" id="one">
+                        1
+                    </button>
+                    <button data-action="addTwo" class="btn graysBtn" id="two">
+                        2
+                    </button>
+                    <button
+                        data-action="addThree"
+                        class="btn graysBtn"
+                        id="three"
+                    >
+                        3
+                    </button>
+                </div>
+                <div class="row" id="row4">
+                    <button
+                        data-action="divide"
+                        class="btn orangesBtn"
+                        id="_divide"
+                    >
+                        /
+                    </button>
+                    <button
+                        data-action="addZero"
+                        class="btn graysBtn"
+                        id="zero"
+                    >
+                        0
+                    </button>
+                    <button
+                        data-action="addPoint"
+                        class="btn graysBtn"
+                        id="point"
+                    >
+                        .
+                    </button>
+                    <button
+                        data-action="equals"
+                        class="btn graysBtn"
+                        id="_equals"
+                    >
+                        =
+                    </button>
+                </div>
+                <div class="row" id="row5">
+                    <button
+                        data-action="clear"
+                        class="btn orangesBtn"
+                        id="_clear"
+                    >
+                        C
+                    </button>
                 </div>
             </div>
         </section>
