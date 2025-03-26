@@ -1,10 +1,4 @@
-window.addEventListener('load', () => {
-    const mainFieldBody = document.querySelector('#mainFieldBody')
-    const section = document.querySelector('section')
-    const heightF = getComputedStyle(mainFieldBody).height
-    mainFieldBody.style.setProperty('--heightF', heightF)
-    section.style.setProperty('--heightF', heightF)
-})
+window.addEventListener('load', () => {})
 
 let input = document.getElementById('inputField')
 let buttons = document.getElementById('actionsBody')
@@ -12,51 +6,56 @@ let buttons = document.getElementById('actionsBody')
 // document.addEventListener('keydown', clickOrPress)
 
 buttons.addEventListener('click', clickOrPress)
+let actionMemory = ''
+let numberMemory = 0
 
 function clickOrPress(event) {
-    // if (event.type === 'keydown') {
-    //     const key = event.key
-    //     if (
-    //         [
-    //             '0',
-    //             '1',
-    //             '2',
-    //             '3',
-    //             '4',
-    //             '5',
-    //             '6',
-    //             '7',
-    //             '8',
-    //             '9' /*, '.'*/,
-    //         ].includes(key)
-    //     ) {
-    //         input.value += key
-    //     }
-    // } else
     if (event.target.tagName === 'BUTTON') {
         const action = event.target.dataset.action
         console.log(`Made action: ${action}`) //Шаблонная строка
 
         switch (action) {
             case 'plus':
-                input.value += ''
+                actionMemory = '+'
+                numberMemory = Number(input.value)
+                input.value = ''
                 break
             case 'minus':
-                input.value += ''
+                actionMemory = '-'
+                numberMemory = Number(input.value)
+                input.value = ''
                 break
             case 'multiply':
-                input.value += ''
+                actionMemory = '*'
+                numberMemory = Number(input.value)
+                input.value = ''
                 break
             case 'divide':
-                input.value += ''
+                actionMemory = '/'
+                numberMemory = Number(input.value)
+                input.value = ''
                 break
             case 'equals':
-                input.value += ''
+                switch (actionMemory) {
+                    case '+':
+                        input.value = Number(numberMemory) + Number(input.value)
+                        break
+                    case '-':
+                        input.value = Number(numberMemory) - Number(input.value)
+                        break
+                    case '*':
+                        input.value = Number(numberMemory) * Number(input.value)
+                        break
+                    case '/':
+                        input.value = Number(numberMemory) / Number(input.value)
+                        break
+                }
+
                 break
             case 'addPoint':
                 break
             case 'clear':
-                input.value = ''
+                input.value = 'C'
                 break
             case 'addZero':
                 input.value += '0'
