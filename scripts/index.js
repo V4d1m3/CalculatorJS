@@ -35,19 +35,37 @@ function clickOrPress(event) {
                 numberMemory = Number(input.value)
                 input.value = ''
                 break
+            case 'exponent':
+                actionMemory = '^'
+                numberMemory = Number(input.value)
+                input.value = ''
+                break
+            case 'factorial':
+                let res = 1
+                for (i = 1; i <= Number(input.value); i++) {
+                    res *= i
+                }
+                input.value = res
+                break
             case 'equals':
                 switch (actionMemory) {
                     case '+':
-                        input.value = Number(numberMemory) + Number(input.value)
+                        input.value = numberMemory + Number(input.value)
                         break
                     case '-':
-                        input.value = Number(numberMemory) - Number(input.value)
+                        input.value = numberMemory - Number(input.value)
                         break
                     case '*':
-                        input.value = Number(numberMemory) * Number(input.value)
+                        input.value = numberMemory * Number(input.value)
                         break
                     case '/':
-                        input.value = Number(numberMemory) / Number(input.value)
+                        input.value = numberMemory / Number(input.value)
+                        break
+                    case '^':
+                        input.value = Math.pow(
+                            numberMemory,
+                            Number(input.value)
+                        )
                         break
                 }
 
